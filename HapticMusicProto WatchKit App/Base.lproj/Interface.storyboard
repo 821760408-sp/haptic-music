@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HapticMusicProto_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="Nm4-I3-iIX">
+                            <items>
+                                <tableRow identifier="AudioTrackRowController" id="LqT-FQ-oe7" customClass="AudioTrackRowController" customModule="HapticMusicProto_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="Ody-8J-L6q">
+                                        <items>
+                                            <imageView width="32" height="32" alignment="left" verticalAlignment="center" isAccessibilityElement="YES" contentMode="scaleAspectFit" id="ss4-uu-pLq"/>
+                                            <label width="87.5" height="38.5" alignment="left" verticalAlignment="center" text="Label" id="HD0-0J-T2K"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="trackImage" destination="ss4-uu-pLq" id="XHe-5z-HNg"/>
+                                        <outlet property="trackName" destination="HD0-0J-T2K" id="c0F-Qx-JN6"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tracklistTable" destination="Nm4-I3-iIX" id="gxl-uE-cn4"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="305" y="429"/>
+        </scene>
+    </scenes>
+</document>

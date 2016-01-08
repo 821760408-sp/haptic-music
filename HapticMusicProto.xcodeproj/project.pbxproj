@@ -1,0 +1,769 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6AF2219D1C3DEB1500A10A6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2219C1C3DEB1500A10A6B /* AppDelegate.swift */; };
+		6AF2219F1C3DEB1500A10A6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2219E1C3DEB1500A10A6B /* ViewController.swift */; };
+		6AF221A21C3DEB1500A10A6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF221A01C3DEB1500A10A6B /* Main.storyboard */; };
+		6AF221A41C3DEB1500A10A6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AF221A31C3DEB1500A10A6B /* Assets.xcassets */; };
+		6AF221A71C3DEB1500A10A6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF221A51C3DEB1500A10A6B /* LaunchScreen.storyboard */; };
+		6AF221B21C3DEB1500A10A6B /* HapticMusicProtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF221B11C3DEB1500A10A6B /* HapticMusicProtoTests.swift */; };
+		6AF221BD1C3DEB1500A10A6B /* HapticMusicProtoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF221BC1C3DEB1500A10A6B /* HapticMusicProtoUITests.swift */; };
+		6AF221C21C3DEB1500A10A6B /* HapticMusicProto WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6AF221C11C3DEB1500A10A6B /* HapticMusicProto WatchKit App.app */; };
+		6AF221C81C3DEB1500A10A6B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF221C61C3DEB1500A10A6B /* Interface.storyboard */; };
+		6AF221CA1C3DEB1500A10A6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AF221C91C3DEB1500A10A6B /* Assets.xcassets */; };
+		6AF221D11C3DEB1600A10A6B /* HapticMusicProto WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6AF221D01C3DEB1600A10A6B /* HapticMusicProto WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6AF221D61C3DEB1600A10A6B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF221D51C3DEB1600A10A6B /* InterfaceController.swift */; };
+		6AF221D81C3DEB1600A10A6B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF221D71C3DEB1600A10A6B /* ExtensionDelegate.swift */; };
+		6AF221DA1C3DEB1600A10A6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AF221D91C3DEB1600A10A6B /* Assets.xcassets */; };
+		6AF221F01C3E05E700A10A6B /* AudioTrackRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF221EF1C3E05E700A10A6B /* AudioTrackRowController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6AF221AE1C3DEB1500A10A6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AF221911C3DEB1500A10A6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AF221981C3DEB1500A10A6B;
+			remoteInfo = HapticMusicProto;
+		};
+		6AF221B91C3DEB1500A10A6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AF221911C3DEB1500A10A6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AF221981C3DEB1500A10A6B;
+			remoteInfo = HapticMusicProto;
+		};
+		6AF221C31C3DEB1500A10A6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AF221911C3DEB1500A10A6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AF221C01C3DEB1500A10A6B;
+			remoteInfo = "HapticMusicProto WatchKit App";
+		};
+		6AF221D21C3DEB1600A10A6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AF221911C3DEB1500A10A6B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AF221CF1C3DEB1600A10A6B;
+			remoteInfo = "HapticMusicProto WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6AF221E11C3DEB1600A10A6B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6AF221D11C3DEB1600A10A6B /* HapticMusicProto WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AF221E51C3DEB1600A10A6B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				6AF221C21C3DEB1500A10A6B /* HapticMusicProto WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6AF221991C3DEB1500A10A6B /* HapticMusicProto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HapticMusicProto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AF2219C1C3DEB1500A10A6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6AF2219E1C3DEB1500A10A6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6AF221A11C3DEB1500A10A6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6AF221A31C3DEB1500A10A6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6AF221A61C3DEB1500A10A6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6AF221A81C3DEB1500A10A6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AF221AD1C3DEB1500A10A6B /* HapticMusicProtoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HapticMusicProtoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AF221B11C3DEB1500A10A6B /* HapticMusicProtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticMusicProtoTests.swift; sourceTree = "<group>"; };
+		6AF221B31C3DEB1500A10A6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AF221B81C3DEB1500A10A6B /* HapticMusicProtoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HapticMusicProtoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AF221BC1C3DEB1500A10A6B /* HapticMusicProtoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticMusicProtoUITests.swift; sourceTree = "<group>"; };
+		6AF221BE1C3DEB1500A10A6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AF221C11C3DEB1500A10A6B /* HapticMusicProto WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HapticMusicProto WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AF221C71C3DEB1500A10A6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		6AF221C91C3DEB1500A10A6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6AF221CB1C3DEB1500A10A6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AF221D01C3DEB1600A10A6B /* HapticMusicProto WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HapticMusicProto WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AF221D51C3DEB1600A10A6B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		6AF221D71C3DEB1600A10A6B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		6AF221D91C3DEB1600A10A6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6AF221DB1C3DEB1600A10A6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AF221EF1C3E05E700A10A6B /* AudioTrackRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTrackRowController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6AF221961C3DEB1500A10A6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AF221AA1C3DEB1500A10A6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AF221B51C3DEB1500A10A6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AF221CD1C3DEB1600A10A6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6AF221901C3DEB1500A10A6B = {
+			isa = PBXGroup;
+			children = (
+				6AF2219B1C3DEB1500A10A6B /* HapticMusicProto */,
+				6AF221B01C3DEB1500A10A6B /* HapticMusicProtoTests */,
+				6AF221BB1C3DEB1500A10A6B /* HapticMusicProtoUITests */,
+				6AF221C51C3DEB1500A10A6B /* HapticMusicProto WatchKit App */,
+				6AF221D41C3DEB1600A10A6B /* HapticMusicProto WatchKit Extension */,
+				6AF2219A1C3DEB1500A10A6B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6AF2219A1C3DEB1500A10A6B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6AF221991C3DEB1500A10A6B /* HapticMusicProto.app */,
+				6AF221AD1C3DEB1500A10A6B /* HapticMusicProtoTests.xctest */,
+				6AF221B81C3DEB1500A10A6B /* HapticMusicProtoUITests.xctest */,
+				6AF221C11C3DEB1500A10A6B /* HapticMusicProto WatchKit App.app */,
+				6AF221D01C3DEB1600A10A6B /* HapticMusicProto WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6AF2219B1C3DEB1500A10A6B /* HapticMusicProto */ = {
+			isa = PBXGroup;
+			children = (
+				6AF2219C1C3DEB1500A10A6B /* AppDelegate.swift */,
+				6AF2219E1C3DEB1500A10A6B /* ViewController.swift */,
+				6AF221A01C3DEB1500A10A6B /* Main.storyboard */,
+				6AF221A31C3DEB1500A10A6B /* Assets.xcassets */,
+				6AF221A51C3DEB1500A10A6B /* LaunchScreen.storyboard */,
+				6AF221A81C3DEB1500A10A6B /* Info.plist */,
+			);
+			path = HapticMusicProto;
+			sourceTree = "<group>";
+		};
+		6AF221B01C3DEB1500A10A6B /* HapticMusicProtoTests */ = {
+			isa = PBXGroup;
+			children = (
+				6AF221B11C3DEB1500A10A6B /* HapticMusicProtoTests.swift */,
+				6AF221B31C3DEB1500A10A6B /* Info.plist */,
+			);
+			path = HapticMusicProtoTests;
+			sourceTree = "<group>";
+		};
+		6AF221BB1C3DEB1500A10A6B /* HapticMusicProtoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6AF221BC1C3DEB1500A10A6B /* HapticMusicProtoUITests.swift */,
+				6AF221BE1C3DEB1500A10A6B /* Info.plist */,
+			);
+			path = HapticMusicProtoUITests;
+			sourceTree = "<group>";
+		};
+		6AF221C51C3DEB1500A10A6B /* HapticMusicProto WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				6AF221C61C3DEB1500A10A6B /* Interface.storyboard */,
+				6AF221C91C3DEB1500A10A6B /* Assets.xcassets */,
+				6AF221CB1C3DEB1500A10A6B /* Info.plist */,
+			);
+			path = "HapticMusicProto WatchKit App";
+			sourceTree = "<group>";
+		};
+		6AF221D41C3DEB1600A10A6B /* HapticMusicProto WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6AF221D51C3DEB1600A10A6B /* InterfaceController.swift */,
+				6AF221D71C3DEB1600A10A6B /* ExtensionDelegate.swift */,
+				6AF221D91C3DEB1600A10A6B /* Assets.xcassets */,
+				6AF221DB1C3DEB1600A10A6B /* Info.plist */,
+				6AF221EF1C3E05E700A10A6B /* AudioTrackRowController.swift */,
+			);
+			path = "HapticMusicProto WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6AF221981C3DEB1500A10A6B /* HapticMusicProto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AF221E61C3DEB1600A10A6B /* Build configuration list for PBXNativeTarget "HapticMusicProto" */;
+			buildPhases = (
+				6AF221951C3DEB1500A10A6B /* Sources */,
+				6AF221961C3DEB1500A10A6B /* Frameworks */,
+				6AF221971C3DEB1500A10A6B /* Resources */,
+				6AF221E51C3DEB1600A10A6B /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AF221C41C3DEB1500A10A6B /* PBXTargetDependency */,
+			);
+			name = HapticMusicProto;
+			productName = HapticMusicProto;
+			productReference = 6AF221991C3DEB1500A10A6B /* HapticMusicProto.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6AF221AC1C3DEB1500A10A6B /* HapticMusicProtoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AF221E91C3DEB1600A10A6B /* Build configuration list for PBXNativeTarget "HapticMusicProtoTests" */;
+			buildPhases = (
+				6AF221A91C3DEB1500A10A6B /* Sources */,
+				6AF221AA1C3DEB1500A10A6B /* Frameworks */,
+				6AF221AB1C3DEB1500A10A6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AF221AF1C3DEB1500A10A6B /* PBXTargetDependency */,
+			);
+			name = HapticMusicProtoTests;
+			productName = HapticMusicProtoTests;
+			productReference = 6AF221AD1C3DEB1500A10A6B /* HapticMusicProtoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6AF221B71C3DEB1500A10A6B /* HapticMusicProtoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AF221EC1C3DEB1600A10A6B /* Build configuration list for PBXNativeTarget "HapticMusicProtoUITests" */;
+			buildPhases = (
+				6AF221B41C3DEB1500A10A6B /* Sources */,
+				6AF221B51C3DEB1500A10A6B /* Frameworks */,
+				6AF221B61C3DEB1500A10A6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AF221BA1C3DEB1500A10A6B /* PBXTargetDependency */,
+			);
+			name = HapticMusicProtoUITests;
+			productName = HapticMusicProtoUITests;
+			productReference = 6AF221B81C3DEB1500A10A6B /* HapticMusicProtoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		6AF221C01C3DEB1500A10A6B /* HapticMusicProto WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AF221E21C3DEB1600A10A6B /* Build configuration list for PBXNativeTarget "HapticMusicProto WatchKit App" */;
+			buildPhases = (
+				6AF221BF1C3DEB1500A10A6B /* Resources */,
+				6AF221E11C3DEB1600A10A6B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AF221D31C3DEB1600A10A6B /* PBXTargetDependency */,
+			);
+			name = "HapticMusicProto WatchKit App";
+			productName = "HapticMusicProto WatchKit App";
+			productReference = 6AF221C11C3DEB1500A10A6B /* HapticMusicProto WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		6AF221CF1C3DEB1600A10A6B /* HapticMusicProto WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AF221DE1C3DEB1600A10A6B /* Build configuration list for PBXNativeTarget "HapticMusicProto WatchKit Extension" */;
+			buildPhases = (
+				6AF221CC1C3DEB1600A10A6B /* Sources */,
+				6AF221CD1C3DEB1600A10A6B /* Frameworks */,
+				6AF221CE1C3DEB1600A10A6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HapticMusicProto WatchKit Extension";
+			productName = "HapticMusicProto WatchKit Extension";
+			productReference = 6AF221D01C3DEB1600A10A6B /* HapticMusicProto WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6AF221911C3DEB1500A10A6B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = JuanGotama;
+				TargetAttributes = {
+					6AF221981C3DEB1500A10A6B = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 5M65A3U9N7;
+					};
+					6AF221AC1C3DEB1500A10A6B = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 6AF221981C3DEB1500A10A6B;
+					};
+					6AF221B71C3DEB1500A10A6B = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 6AF221981C3DEB1500A10A6B;
+					};
+					6AF221C01C3DEB1500A10A6B = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					6AF221CF1C3DEB1600A10A6B = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 6AF221941C3DEB1500A10A6B /* Build configuration list for PBXProject "HapticMusicProto" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6AF221901C3DEB1500A10A6B;
+			productRefGroup = 6AF2219A1C3DEB1500A10A6B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6AF221981C3DEB1500A10A6B /* HapticMusicProto */,
+				6AF221AC1C3DEB1500A10A6B /* HapticMusicProtoTests */,
+				6AF221B71C3DEB1500A10A6B /* HapticMusicProtoUITests */,
+				6AF221C01C3DEB1500A10A6B /* HapticMusicProto WatchKit App */,
+				6AF221CF1C3DEB1600A10A6B /* HapticMusicProto WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6AF221971C3DEB1500A10A6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AF221A71C3DEB1500A10A6B /* LaunchScreen.storyboard in Resources */,
+				6AF221A41C3DEB1500A10A6B /* Assets.xcassets in Resources */,
+				6AF221A21C3DEB1500A10A6B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AF221AB1C3DEB1500A10A6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AF221B61C3DEB1500A10A6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AF221BF1C3DEB1500A10A6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AF221CA1C3DEB1500A10A6B /* Assets.xcassets in Resources */,
+				6AF221C81C3DEB1500A10A6B /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AF221CE1C3DEB1600A10A6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AF221DA1C3DEB1600A10A6B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6AF221951C3DEB1500A10A6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AF2219F1C3DEB1500A10A6B /* ViewController.swift in Sources */,
+				6AF2219D1C3DEB1500A10A6B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AF221A91C3DEB1500A10A6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AF221B21C3DEB1500A10A6B /* HapticMusicProtoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AF221B41C3DEB1500A10A6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AF221BD1C3DEB1500A10A6B /* HapticMusicProtoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AF221CC1C3DEB1600A10A6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AF221F01C3E05E700A10A6B /* AudioTrackRowController.swift in Sources */,
+				6AF221D81C3DEB1600A10A6B /* ExtensionDelegate.swift in Sources */,
+				6AF221D61C3DEB1600A10A6B /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6AF221AF1C3DEB1500A10A6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6AF221981C3DEB1500A10A6B /* HapticMusicProto */;
+			targetProxy = 6AF221AE1C3DEB1500A10A6B /* PBXContainerItemProxy */;
+		};
+		6AF221BA1C3DEB1500A10A6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6AF221981C3DEB1500A10A6B /* HapticMusicProto */;
+			targetProxy = 6AF221B91C3DEB1500A10A6B /* PBXContainerItemProxy */;
+		};
+		6AF221C41C3DEB1500A10A6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6AF221C01C3DEB1500A10A6B /* HapticMusicProto WatchKit App */;
+			targetProxy = 6AF221C31C3DEB1500A10A6B /* PBXContainerItemProxy */;
+		};
+		6AF221D31C3DEB1600A10A6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6AF221CF1C3DEB1600A10A6B /* HapticMusicProto WatchKit Extension */;
+			targetProxy = 6AF221D21C3DEB1600A10A6B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6AF221A01C3DEB1500A10A6B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AF221A11C3DEB1500A10A6B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6AF221A51C3DEB1500A10A6B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AF221A61C3DEB1500A10A6B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6AF221C61C3DEB1500A10A6B /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AF221C71C3DEB1500A10A6B /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6AF221DC1C3DEB1600A10A6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6AF221DD1C3DEB1600A10A6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6AF221DF1C3DEB1600A10A6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "HapticMusicProto WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotama.juan.HapticMusicProto.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		6AF221E01C3DEB1600A10A6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "HapticMusicProto WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotama.juan.HapticMusicProto.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		6AF221E31C3DEB1600A10A6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = HapticMusicProto_WatchKit_Extension;
+				INFOPLIST_FILE = "HapticMusicProto WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotama.juan.HapticMusicProto.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		6AF221E41C3DEB1600A10A6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = HapticMusicProto_WatchKit_Extension;
+				INFOPLIST_FILE = "HapticMusicProto WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotama.juan.HapticMusicProto.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		6AF221E71C3DEB1600A10A6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = HapticMusicProto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotama.juan.HapticMusicProto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		6AF221E81C3DEB1600A10A6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = HapticMusicProto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotama.juan.HapticMusicProto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		6AF221EA1C3DEB1600A10A6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HapticMusicProtoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotama.juan.HapticMusicProtoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HapticMusicProto.app/HapticMusicProto";
+			};
+			name = Debug;
+		};
+		6AF221EB1C3DEB1600A10A6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HapticMusicProtoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotama.juan.HapticMusicProtoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HapticMusicProto.app/HapticMusicProto";
+			};
+			name = Release;
+		};
+		6AF221ED1C3DEB1600A10A6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HapticMusicProtoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotama.juan.HapticMusicProtoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HapticMusicProto;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		6AF221EE1C3DEB1600A10A6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HapticMusicProtoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotama.juan.HapticMusicProtoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = HapticMusicProto;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6AF221941C3DEB1500A10A6B /* Build configuration list for PBXProject "HapticMusicProto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AF221DC1C3DEB1600A10A6B /* Debug */,
+				6AF221DD1C3DEB1600A10A6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AF221DE1C3DEB1600A10A6B /* Build configuration list for PBXNativeTarget "HapticMusicProto WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AF221DF1C3DEB1600A10A6B /* Debug */,
+				6AF221E01C3DEB1600A10A6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6AF221E21C3DEB1600A10A6B /* Build configuration list for PBXNativeTarget "HapticMusicProto WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AF221E31C3DEB1600A10A6B /* Debug */,
+				6AF221E41C3DEB1600A10A6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6AF221E61C3DEB1600A10A6B /* Build configuration list for PBXNativeTarget "HapticMusicProto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AF221E71C3DEB1600A10A6B /* Debug */,
+				6AF221E81C3DEB1600A10A6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6AF221E91C3DEB1600A10A6B /* Build configuration list for PBXNativeTarget "HapticMusicProtoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AF221EA1C3DEB1600A10A6B /* Debug */,
+				6AF221EB1C3DEB1600A10A6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6AF221EC1C3DEB1600A10A6B /* Build configuration list for PBXNativeTarget "HapticMusicProtoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AF221ED1C3DEB1600A10A6B /* Debug */,
+				6AF221EE1C3DEB1600A10A6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6AF221911C3DEB1500A10A6B /* Project object */;
+}
