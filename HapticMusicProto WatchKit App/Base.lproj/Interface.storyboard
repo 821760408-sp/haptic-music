@@ -8,7 +8,7 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HapticMusicProto_WatchKit_App" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HapticMusicProto_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="Nm4-I3-iIX">
                             <items>
@@ -28,11 +28,42 @@
                         </table>
                     </items>
                     <connections>
-                        <outlet property="tracklistTable" destination="Nm4-I3-iIX" id="gxl-uE-cn4"/>
+                        <outlet property="tracklistTable" destination="Nm4-I3-iIX" id="Ak9-Qs-zoQ"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="305" y="429"/>
+        </scene>
+        <!--TimerInterfaceController-->
+        <scene sceneID="8hN-ud-vef">
+            <objects>
+                <controller identifier="TimerInterfaceController" id="GXg-Et-wv6" customClass="TimerInterfaceController" customModule="HapticMusicProto_WatchKit_Extension">
+                    <items>
+                        <timer alignment="center" verticalAlignment="center" id="IqO-O2-rqZ">
+                            <fontDescription key="font" type="boldSystem" pointSize="28"/>
+                            <calendarUnit key="units" minute="YES" second="YES"/>
+                        </timer>
+                    </items>
+                    <connections>
+                        <outlet property="playbackTimer" destination="IqO-O2-rqZ" id="8Ga-Bo-CVb"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="305" y="678"/>
+        </scene>
+        <!--PlaybackInterfaceController-->
+        <scene sceneID="djm-OU-cFK">
+            <objects>
+                <controller identifier="PlaybackInterfaceController" id="XSA-tc-Anh" customClass="PlaybackInterfaceController" customModule="HapticMusicProto_WatchKit_Extension">
+                    <items>
+                        <movie width="1" height="100" alignment="center" semanticContentAttribute="playback" posterImage="img1" id="Eep-z3-UZ0"/>
+                    </items>
+                    <connections>
+                        <outlet property="playbackController" destination="Eep-z3-UZ0" id="az8-zW-LQI"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="499" y="429"/>
         </scene>
     </scenes>
 </document>

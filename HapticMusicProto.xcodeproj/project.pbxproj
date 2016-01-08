@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25FB7AF91C3F69680069D7A9 /* PlaybackInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FB7AF81C3F69680069D7A9 /* PlaybackInterfaceController.swift */; };
+		25FB7AFB1C3F6EA10069D7A9 /* TimerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FB7AFA1C3F6EA10069D7A9 /* TimerInterfaceController.swift */; };
 		6AF2219D1C3DEB1500A10A6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2219C1C3DEB1500A10A6B /* AppDelegate.swift */; };
 		6AF2219F1C3DEB1500A10A6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2219E1C3DEB1500A10A6B /* ViewController.swift */; };
 		6AF221A21C3DEB1500A10A6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF221A01C3DEB1500A10A6B /* Main.storyboard */; };
@@ -81,6 +83,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		25FB7AF81C3F69680069D7A9 /* PlaybackInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackInterfaceController.swift; sourceTree = "<group>"; };
+		25FB7AFA1C3F6EA10069D7A9 /* TimerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInterfaceController.swift; sourceTree = "<group>"; };
 		6AF221991C3DEB1500A10A6B /* HapticMusicProto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HapticMusicProto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF2219C1C3DEB1500A10A6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AF2219E1C3DEB1500A10A6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 				6AF221D91C3DEB1600A10A6B /* Assets.xcassets */,
 				6AF221DB1C3DEB1600A10A6B /* Info.plist */,
 				6AF221EF1C3E05E700A10A6B /* AudioTrackRowController.swift */,
+				25FB7AF81C3F69680069D7A9 /* PlaybackInterfaceController.swift */,
+				25FB7AFA1C3F6EA10069D7A9 /* TimerInterfaceController.swift */,
 			);
 			path = "HapticMusicProto WatchKit Extension";
 			sourceTree = "<group>";
@@ -334,6 +340,7 @@
 					};
 					6AF221CF1C3DEB1600A10A6B = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 5M65A3U9N7;
 					};
 				};
 			};
@@ -433,8 +440,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25FB7AF91C3F69680069D7A9 /* PlaybackInterfaceController.swift in Sources */,
 				6AF221F01C3E05E700A10A6B /* AudioTrackRowController.swift in Sources */,
 				6AF221D81C3DEB1600A10A6B /* ExtensionDelegate.swift in Sources */,
+				25FB7AFB1C3F6EA10069D7A9 /* TimerInterfaceController.swift in Sources */,
 				6AF221D61C3DEB1600A10A6B /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,10 +587,13 @@
 		6AF221DF1C3DEB1600A10A6B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "HapticMusicProto WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gotama.juan.HapticMusicProto.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -592,10 +604,13 @@
 		6AF221E01C3DEB1600A10A6B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "HapticMusicProto WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gotama.juan.HapticMusicProto.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -615,7 +630,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -631,7 +646,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -730,6 +745,7 @@
 				6AF221E01C3DEB1600A10A6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6AF221E21C3DEB1600A10A6B /* Build configuration list for PBXNativeTarget "HapticMusicProto WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -738,6 +754,7 @@
 				6AF221E41C3DEB1600A10A6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6AF221E61C3DEB1600A10A6B /* Build configuration list for PBXNativeTarget "HapticMusicProto" */ = {
 			isa = XCConfigurationList;
@@ -746,6 +763,7 @@
 				6AF221E81C3DEB1600A10A6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6AF221E91C3DEB1600A10A6B /* Build configuration list for PBXNativeTarget "HapticMusicProtoTests" */ = {
 			isa = XCConfigurationList;
@@ -754,6 +772,7 @@
 				6AF221EB1C3DEB1600A10A6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6AF221EC1C3DEB1600A10A6B /* Build configuration list for PBXNativeTarget "HapticMusicProtoUITests" */ = {
 			isa = XCConfigurationList;
@@ -762,6 +781,7 @@
 				6AF221EE1C3DEB1600A10A6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
