@@ -16,9 +16,10 @@ class TimerInterfaceController: WKInterfaceController {
     
     let device = WKInterfaceDevice.currentDevice()
     
-    let trackLengths: [Double] = [60.0, 60.0, 60.0, 60.0, 90.0, 120.0, 120.0, 120.0, 120.0]
+    let trackLengths = [10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0]
 
-    var hapticTimer: NSTimer!
+//    var hapticTimer: NSTimer!
+    var hapticTimers = [NSTimer]()
     var hapticType: WKHapticType!
     
     override func awakeWithContext(context: AnyObject?) {
@@ -45,17 +46,46 @@ class TimerInterfaceController: WKInterfaceController {
             default: break
 
             }
-
-            hapticTimer = NSTimer.scheduledTimerWithTimeInterval(
-//                1,
-//                0.5,
-                0.25,
-                target: self,
-                selector: Selector("playHaptic"),
-                userInfo: nil,
-                repeats: true)
+            
+            /* experimental: the shortest period of pattern re-generation capability */
+            
+            // method 1: creating and scheduling one repeating timer, and destroying it upon existing scene
+//            hapticTimer = NSTimer.scheduledTimerWithTimeInterval(
+//                //                1,
+//                //                0.5,
+//                //                0.25,
+//                0.1,
+//                target: self,
+//                selector: Selector("playHaptic"),
+//                userInfo: nil,
+//                repeats: true)
+            
+            // method 2: creating and scheduling multiple timers, and destroying them upon existing scene
+            var timeInterval = 1.0
+            let timeIncrement = 0.1
+            let howMany: Int = Int(trackLengths[trackNum as! Int] / timeIncrement)
+            // .Notification:  1 sec period seems shortest limit
+            // .DirectionUp:   use 0.1 sec will feel almost like continuous
+            // .DirectionDown: equivalent to .DirectionUp
+            // .Success:       use 0.1 sec will feel almost like continuous
+            // .Failure:       use 0.1 sec will feel like 4/4
+            // .Retry:         equivalent to .Failure
+            // .Start:         use 0.1 sec will feel like 4/4
+            // .Stop:          use 0.1 sec will feel like longer version of .DirectionUp
+            // .Click:         use 0.1 sec will feel like weaker version of .DirectionUp
+            
+            for _ in 1...howMany {
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(
+                        timeInterval,
+                        target: self,
+                        selector: Selector("playHaptic"),
+                        userInfo: nil,
+                        repeats: false))
+                    timeInterval += timeIncrement
+            }
 
             // TODO: use patterns of non-repeats NSTimer to compose haptic feedbacks
+            // TODO: invent new notation for composition: indicate clearly the time inverval between the atomic rhythm/haptic-patterns
         }
     }
 
@@ -71,7 +101,13 @@ class TimerInterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
-        hapticTimer.invalidate()
+//        hapticTimer.invalidate()
+        for (i, timer) in hapticTimers.enumerate() {
+            if timer.valid {
+                NSLog("timer firedate of \(i): %@", timer.fireDate)
+                timer.invalidate()
+            }
+        }
     }
 
 }
