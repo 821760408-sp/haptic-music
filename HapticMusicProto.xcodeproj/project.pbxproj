@@ -337,6 +337,7 @@
 					};
 					6AF221C01C3DEB1500A10A6B = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 5M65A3U9N7;
 					};
 					6AF221CF1C3DEB1600A10A6B = {
 						CreatedOnToolsVersion = 7.2;
@@ -622,15 +623,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = HapticMusicProto_WatchKit_Extension;
 				INFOPLIST_FILE = "HapticMusicProto WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gotama.juan.HapticMusicProto.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
 			};
 			name = Debug;
 		};
@@ -638,15 +642,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = HapticMusicProto_WatchKit_Extension;
 				INFOPLIST_FILE = "HapticMusicProto WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gotama.juan.HapticMusicProto.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
 			};
 			name = Release;
 		};

@@ -15,11 +15,12 @@ class InterfaceController: WKInterfaceController {
     // the outlet to the tracklist table
     @IBOutlet var tracklistTable: WKInterfaceTable!
     
-    let images = ["img1", "img2", "img3", "img4"]
+    // for developing: disabel images will speed up testing on watch
+    // let images = ["img1", "img2", "img3", "img4"]
 
     let names = ["track 1", "track 2", "track 3", "track 4"]
     
-    let trackLength = [60, 60, 120, 120]
+    // let trackLength = [60, 60, 120, 120]
 
     override init() {
         super.init()
@@ -34,7 +35,8 @@ class InterfaceController: WKInterfaceController {
 
             let row = tracklistTable.rowControllerAtIndex(index) as! AudioTrackRowController
             row.trackName.setText(name)
-            row.trackImage.setImage(UIImage(named: images[index]))
+            // for developing: disabel images will speed up testing on watch
+            // row.trackImage.setImage(UIImage(named: images[index]))
             
         }
 
@@ -44,7 +46,8 @@ class InterfaceController: WKInterfaceController {
         
         // pushControllerWithName("PlaybackInterfaceController", context: nil)
         // TODO: pass into /context/ the rowIndex i.e. the track number also (as an array?)
-        pushControllerWithName("TimerInterfaceController", context: trackLength[rowIndex])
+        // pushControllerWithName("TimerInterfaceController", context: trackLength[rowIndex])
+        pushControllerWithName("TimerInterfaceController", context: rowIndex)
     
     }
 
