@@ -12,98 +12,55 @@ import Foundation
 
 class TimerInterfaceController: WKInterfaceController {
 
-    @IBOutlet var playbackTimer: WKInterfaceTimer!
+    @IBOutlet var pbInterfaceTimer: WKInterfaceTimer!
     
     let device = WKInterfaceDevice.currentDevice()
     
-    let trackLengths = [60.0, 60.0, 60.0, 60.0, 90.0, 120.0, 120.0, 120.0, 120.0]
+    let trackLengths: [Double] = [60.0, 60.0, 60.0, 60.0, 90.0, 120.0, 120.0, 120.0, 120.0]
+
+    var hapticTimer: NSTimer!
+    var hapticType: WKHapticType!
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        // Configure interface objects here.
-        // if let duration: AnyObject = context {
+
         if let trackNum: AnyObject = context {
+
             let date = NSDate(timeIntervalSinceNow: trackLengths[trackNum as! Int] )
-            playbackTimer.setDate(date)
-            playbackTimer.start()
+
+            pbInterfaceTimer.setDate(date)
+            pbInterfaceTimer.start()
+
             switch trackNum as! Int {
-            case 0:
-                playAlert("playNotification")
-            case 1:
-                playAlert("playDirectionUp")
-            case 2:
-                playAlert("playDirectionDown")
-            case 3:
-                playAlert("playSuccess")
-            case 4:
-                playAlert("playFailure")
-            case 5:
-                playAlert("playRetry")
-            case 6:
-                playAlert("playStart")
-            case 7:
-                playAlert("playStop")
-            case 8:
-                playAlert("playClick")
+
+            case 0: hapticType = WKHapticType.Notification  // Tap-Tap-Vibrate
+            case 1: hapticType = WKHapticType.DirectionUp   // Tap-Tap
+            case 2: hapticType = WKHapticType.DirectionDown // Tap-Tap
+            case 3: hapticType = WKHapticType.Success       // Tap-Tap-Tap
+            case 4: hapticType = WKHapticType.Failure       // Long Vibrate
+            case 5: hapticType = WKHapticType.Retry         // Long Vibrate
+            case 6: hapticType = WKHapticType.Start         // Long Tap
+            case 7: hapticType = WKHapticType.Stop          // Long Tap-Long Tap
+            case 8: hapticType = WKHapticType.Click         // Light Tap
             default: break
+
             }
+
+            hapticTimer = NSTimer.scheduledTimerWithTimeInterval(
+//                1,
+//                0.5,
+                0.25,
+                target: self,
+                selector: Selector("playHaptic"),
+                userInfo: nil,
+                repeats: true)
+
+            // TODO: use patterns of non-repeats NSTimer to compose haptic feedbacks
         }
     }
-    
-    func playAlert(_selector: String) {
-        
-//        var fireTime: Double = 1
-//        let timeInc: Double = 1
-//        for _ in 1...10 {
-//            NSTimer.scheduledTimerWithTimeInterval(fireTime, target: self, selector: Selector("playSuccess"), userInfo: nil, repeats: false)
-//            fireTime += timeInc
-//        }
-        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector(_selector), userInfo: nil, repeats: true)
-        
-    }
-    
-//    func playHaptic() {
-//        
-//        let device = WKInterfaceDevice.currentDevice()
-//        device.playHaptic(.Notification)
-//        
-//    }
-    
-    func playNotification() {
-        device.playHaptic(.Notification)
-    }
-    
-    func playDirectionUp() {
-        device.playHaptic(.DirectionUp)
-    }
-    
-    func playDirectionDown() {
-        device.playHaptic(.DirectionDown)
-    }
-    
-    func playSuccess() {
-        device.playHaptic(.Success)
-    }
-    
-    func playFailure() {
-        device.playHaptic(.Failure)
-    }
-    
-    func playRetry() {
-        device.playHaptic(.Retry)
-    }
-    
-    func playStart() {
-        device.playHaptic(.Start)
-    }
-    
-    func playStop() {
-        device.playHaptic(.Stop)
-    }
-    
-    func playClick() {
-        device.playHaptic(.Click)
+
+    func playHaptic() {
+        device.playHaptic(hapticType!)
     }
 
     override func willActivate() {
@@ -114,6 +71,7 @@ class TimerInterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+        hapticTimer.invalidate()
     }
 
 }

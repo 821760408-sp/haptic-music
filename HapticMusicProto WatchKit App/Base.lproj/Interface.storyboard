@@ -45,7 +45,7 @@
                         </timer>
                     </items>
                     <connections>
-                        <outlet property="playbackTimer" destination="IqO-O2-rqZ" id="8Ga-Bo-CVb"/>
+                        <outlet property="pbInterfaceTimer" destination="IqO-O2-rqZ" id="D9D-Ks-dTl"/>
                     </connections>
                 </controller>
             </objects>
