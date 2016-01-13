@@ -64,13 +64,13 @@ class TimerInterfaceController: WKInterfaceController {
             var timeInterval = 1.0
             let timeIncrement = 0.1
             let howMany: Int = Int(trackLengths[trackNum as! Int] / timeIncrement)
-            // .Notification:  1 sec period seems shortest limit
-            // .DirectionUp:   use 0.1 sec will feel almost like continuous
-            // .DirectionDown: equivalent to .DirectionUp
-            // .Success:       use 0.1 sec will feel almost like continuous
-            // .Failure:       use 0.1 sec will feel like 4/4
-            // .Retry:         equivalent to .Failure
-            // .Start:         use 0.1 sec will feel like 4/4
+            // .Notification:  spanning ~1 sec
+            // .DirectionUp:   use 0.1 sec will feel almost like 4/4
+            // .DirectionDown: (equivalent to .DirectionUp)
+            // .Success:       use 0.1 sec will feel almost like 8/8
+            // .Failure:       ?
+            // .Retry:         (equivalent to .Failure)
+            // .Start:         ?
             // .Stop:          use 0.1 sec will feel like longer version of .DirectionUp
             // .Click:         use 0.1 sec will feel like weaker version of .DirectionUp
             
