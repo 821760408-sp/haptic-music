@@ -18,7 +18,17 @@ class InterfaceController: WKInterfaceController {
     // for developing: disabel images will speed up testing on watch
     // let images = ["img1", "img2", "img3", "img4"]
 
-    let names = ["Notification", "DirectionUp", "DirectionDown", "Success", "Failure", "Retry", "Start", "End", "Click"]
+    let names = [
+        "track1: Moon water",
+        "track 2",
+        "track 3",
+        "track 4",
+        "track 5",
+        "track 6",
+        "track 7",
+        "track 8",
+        "track 9"
+    ]
     
     // let trackLength = [60, 60, 120, 120]
 

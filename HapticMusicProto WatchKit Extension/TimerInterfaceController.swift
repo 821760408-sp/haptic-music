@@ -18,7 +18,7 @@ class TimerInterfaceController: WKInterfaceController {
     
     let trackLengths: [Double] = [60.0, 60.0, 60.0, 60.0, 90.0, 120.0, 120.0, 120.0, 120.0]
 
-    var hapticTimer: NSTimer!
+    var hapticTimers = [NSTimer]()
     var hapticType: WKHapticType!
     
     override func awakeWithContext(context: AnyObject?) {
@@ -31,31 +31,69 @@ class TimerInterfaceController: WKInterfaceController {
             pbInterfaceTimer.setDate(date)
             pbInterfaceTimer.start()
 
+            var timeInterval = 0.5
+            let TIME_INC_REGULAR = 1.0 //0.5
+            let TIME_INC_NOTIFICATION = 1.0
+            let TIME_INC_RETRY = 1.15 //0.65
+            let TIME_BEAT_GAP = 1.0
+
             switch trackNum as! Int {
 
-            case 0: hapticType = WKHapticType.Notification  // Tap-Tap-Vibrate
-            case 1: hapticType = WKHapticType.DirectionUp   // Tap-Tap
-            case 2: hapticType = WKHapticType.DirectionDown // Tap-Tap
-            case 3: hapticType = WKHapticType.Success       // Tap-Tap-Tap
-            case 4: hapticType = WKHapticType.Failure       // Long Vibrate
-            case 5: hapticType = WKHapticType.Retry         // Long Vibrate
-            case 6: hapticType = WKHapticType.Start         // Long Tap
-            case 7: hapticType = WKHapticType.Stop          // Long Tap-Long Tap
-            case 8: hapticType = WKHapticType.Click         // Light Tap
+            case 0:
+                //( tt . lv . lt . ttt ) * 4
+                for _ in 1...4 {
+
+                    hapticType = WKHapticType.DirectionUp
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
+
+                    timeInterval += TIME_INC_REGULAR
+                    hapticType = WKHapticType.Retry
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
+
+                    timeInterval += TIME_INC_RETRY
+                    hapticType = WKHapticType.Start
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
+
+                    timeInterval += TIME_INC_REGULAR
+                    hapticType = WKHapticType.Success
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
+                    
+                    timeInterval += TIME_INC_REGULAR
+                    timeInterval += TIME_BEAT_GAP
+                }
+
+                //( lt . lv . ltlt . lt ) * 4
+                for _ in 1...4 {
+                    hapticType = WKHapticType.Start
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
+
+                    timeInterval += TIME_INC_REGULAR
+                    hapticType = WKHapticType.Retry
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
+
+                    timeInterval += TIME_INC_RETRY
+                    hapticType = WKHapticType.Stop
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
+
+                    timeInterval += TIME_INC_REGULAR
+                    hapticType = WKHapticType.Start
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
+
+                    timeInterval += TIME_INC_REGULAR
+                    timeInterval += TIME_BEAT_GAP
+                }
+
+            case 1: hapticType = .DirectionUp   // Tap-Tap
+            case 2: hapticType = .DirectionDown // Tap-Tap
+            case 3: hapticType = .Success       // Tap-Tap-Tap
+            case 4: hapticType = .Failure       // Long Vibrate
+            case 5: hapticType = .Retry         // Long Vibrate
+            case 6: hapticType = .Start         // Long Tap
+            case 7: hapticType = .Stop          // Long Tap-Long Tap
+            case 8: hapticType = .Click         // Light Tap
             default: break
 
             }
-
-            hapticTimer = NSTimer.scheduledTimerWithTimeInterval(
-//                1,
-//                0.5,
-                0.25,
-                target: self,
-                selector: Selector("playHaptic"),
-                userInfo: nil,
-                repeats: true)
-
-            // TODO: use patterns of non-repeats NSTimer to compose haptic feedbacks
         }
     }
 
@@ -71,7 +109,11 @@ class TimerInterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
-        hapticTimer.invalidate()
+        for timer in hapticTimers {
+            if timer.valid {
+                timer.invalidate()
+            }
+        }
     }
 
 }
