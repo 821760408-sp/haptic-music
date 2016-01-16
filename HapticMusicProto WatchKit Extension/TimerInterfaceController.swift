@@ -20,7 +20,7 @@ class TimerInterfaceController: WKInterfaceController {
 
     var hapticTimer1: NSTimer!
     var hapticTimer2: NSTimer!
-    var hapticType1: WKHapticType! = WKHapticType.Stop // Long Tap-Long Tap
+    var hapticType1: WKHapticType! = WKHapticType.Click // Light Tap
     var hapticType2: WKHapticType!
     var hapticTimers1 = [NSTimer]()
     var hapticTimers2 = [NSTimer]()
@@ -36,16 +36,16 @@ class TimerInterfaceController: WKInterfaceController {
             pbInterfaceTimer.start()
 
             var timeInterval1 = 0.0
-            var timeIncrement1 = 1.15
-            var timeInterval2 = 0.65
-            var timeIncrement2 = 1.15
+            var timeIncrement1 = 1.0
+            var timeInterval2 = 0.5
+            var timeIncrement2 = 1.0
 
             switch trackNum as! Int {
 
             case 0:
                 hapticType2 = WKHapticType.Notification // Tap-Tap-Vibrate
-                timeIncrement1 = 1.65
-                timeIncrement2 = 1.65
+                timeIncrement1 = 1.5
+                timeIncrement2 = 1.5
             case 1:
                 hapticType2 = WKHapticType.DirectionUp  // Tap-Tap
             case 2:
@@ -55,7 +55,9 @@ class TimerInterfaceController: WKInterfaceController {
             case 4:
                 hapticType2 = WKHapticType.Start        // Long Tap
             case 5:
-                hapticType2 = WKHapticType.Click        // Light-Tap
+                hapticType2 = WKHapticType.Stop         // Long Tap-Long Tap
+                timeIncrement1 = 1.15
+                timeIncrement2 = 1.15
             default: break
 
             }
