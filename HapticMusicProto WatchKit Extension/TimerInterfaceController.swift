@@ -16,10 +16,14 @@ class TimerInterfaceController: WKInterfaceController {
     
     let device = WKInterfaceDevice.currentDevice()
     
-    let trackLengths: [Double] = [60.0, 60.0, 60.0, 60.0, 90.0, 120.0, 120.0, 120.0, 120.0]
+    let trackLengths: [Double] = [ 20.0, 20.0, 20.0, 20.0, 20.0, 20.0 ]
 
-    var hapticTimer: NSTimer!
-    var hapticType: WKHapticType!
+    var hapticTimer1: NSTimer!
+    var hapticTimer2: NSTimer!
+    var hapticType1: WKHapticType! = WKHapticType.Notification // Tap-Tap-Vibrate
+    var hapticType2: WKHapticType!
+    var hapticTimers1 = [NSTimer]()
+    var hapticTimers2 = [NSTimer]()
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -33,34 +37,60 @@ class TimerInterfaceController: WKInterfaceController {
 
             switch trackNum as! Int {
 
-            case 0: hapticType = WKHapticType.Notification  // Tap-Tap-Vibrate
-            case 1: hapticType = WKHapticType.DirectionUp   // Tap-Tap
-            case 2: hapticType = WKHapticType.DirectionDown // Tap-Tap
-            case 3: hapticType = WKHapticType.Success       // Tap-Tap-Tap
-            case 4: hapticType = WKHapticType.Failure       // Long Vibrate
-            case 5: hapticType = WKHapticType.Retry         // Long Vibrate
-            case 6: hapticType = WKHapticType.Start         // Long Tap
-            case 7: hapticType = WKHapticType.Stop          // Long Tap-Long Tap
-            case 8: hapticType = WKHapticType.Click         // Light Tap
+            case 0:
+                hapticType2 = WKHapticType.DirectionUp  // Tap-Tap
+            case 1:
+                hapticType2 = WKHapticType.Success      // Tap-Tap-Tap
+            case 2:
+                hapticType2 = WKHapticType.Failure      // Long Vibrate
+            case 3:
+                hapticType2 = WKHapticType.Start        // Long Tap
+            case 4:
+                hapticType2 = WKHapticType.Stop         // Long Tap-Long Tap
+            case 5:
+                hapticType2 = WKHapticType.Click        // Light-Tap
             default: break
 
             }
 
-            hapticTimer = NSTimer.scheduledTimerWithTimeInterval(
-//                1,
-//                0.5,
-                0.25,
-                target: self,
-                selector: Selector("playHaptic"),
-                userInfo: nil,
-                repeats: true)
+            var timeInterval1 = 0.0
+            let timeIncrement1 = 2.0 // the 0, 2, 4, 6th.. second
+            var timeInterval2 = 1.0
+            let timeIncrement2 = 2.0 // the 1, 3, 5, 7th.. second
+            let howMany: Int = ( Int )( trackLengths[ trackNum as! Int ] / timeIncrement1 )
+
+            for _ in 1...howMany {
+
+                hapticTimers1.append(NSTimer.scheduledTimerWithTimeInterval(
+                    timeInterval1,
+                    target: self,
+                    selector: "playHaptic1",
+                    userInfo: nil,
+                    repeats: false))
+
+                hapticTimers2.append(NSTimer.scheduledTimerWithTimeInterval(
+                    timeInterval2,
+                    target: self,
+                    selector: "playHaptic2",
+                    userInfo: nil,
+                    repeats: false))
+
+                timeInterval1 += timeIncrement1
+                timeInterval2 += timeIncrement2
+
+                //TODO: put everything into arrays
+            }
 
             // TODO: use patterns of non-repeats NSTimer to compose haptic feedbacks
         }
     }
 
-    func playHaptic() {
-        device.playHaptic(hapticType!)
+    func playHaptic1() {
+        device.playHaptic(hapticType1!)
+    }
+
+    func playHaptic2() {
+        device.playHaptic(hapticType2!)
     }
 
     override func willActivate() {
@@ -71,7 +101,16 @@ class TimerInterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
-        hapticTimer.invalidate()
+        for timer1 in hapticTimers1 {
+            if timer1.valid {
+                timer1.invalidate()
+            }
+        }
+        for timer2 in hapticTimers2 {
+            if timer2.valid {
+                timer2.invalidate()
+            }
+        }
     }
 
 }
