@@ -18,9 +18,7 @@ class InterfaceController: WKInterfaceController {
     // for developing: disabel images will speed up testing on watch
     // let images = ["img1", "img2", "img3", "img4"]
 
-    let names = ["Notification+Direction", "Notification+Success", "Notification+Failure", "Notification+Start", "Notification+End", "Notification+Click"]
-    
-    // let trackLength = [60, 60, 120, 120]
+    let names = ["Direction+Notification", "Direction+Success", "Direction+Failure", "Direction+Start", "Direction+Stop", "Direction+Click"]
 
     override init() {
         super.init()

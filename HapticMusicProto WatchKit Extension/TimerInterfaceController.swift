@@ -20,7 +20,7 @@ class TimerInterfaceController: WKInterfaceController {
 
     var hapticTimer1: NSTimer!
     var hapticTimer2: NSTimer!
-    var hapticType1: WKHapticType! = WKHapticType.Notification // Tap-Tap-Vibrate
+    var hapticType1: WKHapticType! = WKHapticType.DirectionUp // Tap-Tap
     var hapticType2: WKHapticType!
     var hapticTimers1 = [NSTimer]()
     var hapticTimers2 = [NSTimer]()
@@ -35,10 +35,17 @@ class TimerInterfaceController: WKInterfaceController {
             pbInterfaceTimer.setDate(date)
             pbInterfaceTimer.start()
 
+            var timeInterval1 = 0.0
+            var timeIncrement1 = 1.0 // the 0, 1, 2, 3th.. second
+            var timeInterval2 = 0.5
+            var timeIncrement2 = 1.0 // the 0.5, 1.5, 2.5, 3.5th.. second
+
             switch trackNum as! Int {
 
             case 0:
-                hapticType2 = WKHapticType.DirectionUp  // Tap-Tap
+                hapticType2 = WKHapticType.Notification // Tap-Tap-Vibrate
+                timeIncrement1 = 1.5
+                timeIncrement2 = 1.5
             case 1:
                 hapticType2 = WKHapticType.Success      // Tap-Tap-Tap
             case 2:
@@ -47,16 +54,14 @@ class TimerInterfaceController: WKInterfaceController {
                 hapticType2 = WKHapticType.Start        // Long Tap
             case 4:
                 hapticType2 = WKHapticType.Stop         // Long Tap-Long Tap
+                timeIncrement1 = 1.25
+                timeIncrement2 = 1.25
             case 5:
                 hapticType2 = WKHapticType.Click        // Light-Tap
             default: break
 
             }
 
-            var timeInterval1 = 0.0
-            let timeIncrement1 = 2.0 // the 0, 2, 4, 6th.. second
-            var timeInterval2 = 1.0
-            let timeIncrement2 = 2.0 // the 1, 3, 5, 7th.. second
             let howMany: Int = ( Int )( trackLengths[ trackNum as! Int ] / timeIncrement1 )
 
             for _ in 1...howMany {
