@@ -19,7 +19,8 @@ class TimerInterfaceController: WKInterfaceController {
     let trackLengths: [Double] = [60.0, 60.0, 60.0, 60.0, 90.0, 120.0, 120.0, 120.0, 120.0]
 
     var hapticTimers = [NSTimer]()
-    var hapticType: WKHapticType!
+    var hapticType = WKHapticType.DirectionUp //: WKHapticType!
+    var hapticTypeTest: WKHapticType!
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -47,15 +48,17 @@ class TimerInterfaceController: WKInterfaceController {
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
 
                     timeInterval += TIME_INC_REGULAR
-                    hapticType = WKHapticType.Retry
-                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
+//                    hapticType = .Retry
+                    hapticTypeTest = .Retry
+//                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTest", userInfo: nil, repeats: false))
 
                     timeInterval += TIME_INC_RETRY
-                    hapticType = WKHapticType.Start
+                    hapticType = .Start
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
 
                     timeInterval += TIME_INC_REGULAR
-                    hapticType = WKHapticType.Success
+                    hapticType = .Success
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
                     
                     timeInterval += TIME_INC_REGULAR
@@ -64,19 +67,19 @@ class TimerInterfaceController: WKInterfaceController {
 
                 //( lt . lv . ltlt . lt ) * 4
                 for _ in 1...4 {
-                    hapticType = WKHapticType.Start
+                    hapticType = .Start
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
 
                     timeInterval += TIME_INC_REGULAR
-                    hapticType = WKHapticType.Retry
+                    hapticType = .Retry
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
 
                     timeInterval += TIME_INC_RETRY
-                    hapticType = WKHapticType.Stop
+                    hapticType = .Stop
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
 
                     timeInterval += TIME_INC_REGULAR
-                    hapticType = WKHapticType.Start
+                    hapticType = .Start
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHaptic", userInfo: nil, repeats: false))
 
                     timeInterval += TIME_INC_REGULAR
@@ -98,7 +101,11 @@ class TimerInterfaceController: WKInterfaceController {
     }
 
     func playHaptic() {
-        device.playHaptic(hapticType!)
+        device.playHaptic(hapticType)
+    }
+
+    func playHapticTest() {
+        device.playHaptic(hapticTypeTest!)
     }
 
     override func willActivate() {
