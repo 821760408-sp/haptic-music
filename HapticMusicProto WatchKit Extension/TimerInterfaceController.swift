@@ -56,210 +56,326 @@ class TimerInterfaceController: WKInterfaceController {
             case 7: // track 1
 
                 // 1st 4 bars
-                for _ in 1...3 {
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
+//                for _ in 1...3 {
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                }
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                for _ in 1...2 {
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                }
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+
+                /* lt v ttt lt, lt v ttt lt, lt v ttt lt, lt v ttt lt */
+                for _ in  1...4 {
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
                 }
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                for _ in 1...2 {
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                }
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
 
                 // 2nd 4 bars
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_LONGTAP
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_LONGTAP
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_LONGTAP
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_LONGTAP
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_LONGTAP
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_LONGTAP
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_LONGTAP
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_LONGTAP
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
 
-                // 3rd 4 bars
-                for _ in 1...4 {
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_TAPTAPVIBRATE
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                }
-
-                // 4th 4 bars
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_LONGTAP
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_LONGTAP
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_LONGTAP
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_LONGTAP
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-
-                // 5th 4 bars
-                for _ in 1...2 {
+                /* lt v tt lt, lt v tt lt, lt v tt lt, lt v tt lt */
+                for _ in  1...4 {
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
                     timeInterval += TIME_INC_REGULAR
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
                     timeInterval += TIME_INC_REGULAR
+                }
+
+                // 3rd 4 bars
+//                for _ in 1...4 {
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_TAPTAPVIBRATE
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                }
+
+                /* lt c ttt lt, lt c ttt lt, lt ~ ttt lt, lt ~ ttt lt */
+                for _ in  1...2 {
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
                     timeInterval += TIME_INC_REGULAR
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
                     timeInterval += TIME_INC_REGULAR
                 }
-                for _ in 1...2 {
+                for _ in  1...2 {
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                }
+
+                // 4th 4 bars
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_LONGTAP
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_LONGTAP
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_LONGTAP
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_LONGTAP
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+
+                /* lt c tt lt, lt c tt lt, lt ~ tt lt, lt ~ tt lt, */
+                for _ in  1...2 {
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                }
+                for _ in  1...2 {
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                }
+
+                // 5th 4 bars
+//                for _ in 1...2 {
+//                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
+//                    timeInterval += TIME_INC_REGULAR
+//                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+//                    timeInterval += TIME_INC_REGULAR
+//                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                    timeInterval += TIME_INC_REGULAR
+//                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+//                    timeInterval += TIME_INC_REGULAR
+//                }
+//                for _ in 1...2 {
+//                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+//                    timeInterval += TIME_INC_REGULAR
+//                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                    timeInterval += TIME_INC_REGULAR
+//                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+//                    timeInterval += TIME_INC_REGULAR
+//                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                    timeInterval += TIME_INC_REGULAR
+//                }
+
+                /* lt lt-lt ttt v, lt lt-lt ttt v, lt lt-lt ttt v, lt lt-lt */
+                for _ in  1...3 {
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_LONGTAP
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
                     timeInterval += TIME_INC_REGULAR
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
                     timeInterval += TIME_INC_REGULAR
+                }
+                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                timeInterval += TIME_INC_REGULAR
+                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+                timeInterval += TIME_INC_LONGTAP
+
+                // 6th 4 bars
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                timeInterval += TIME_INC_REGULAR
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+
+                /* lt lt-lt ttt v, lt lt-lt ttt v, lt lt-lt ttt v, lt lt-lt */
+                for _ in  1...3 {
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_LONGTAP
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                }
+                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                timeInterval += TIME_INC_REGULAR
+                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+                timeInterval += TIME_INC_LONGTAP
+
+
+                // 7th 4 bars
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_LONGTAP
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_TAPTAPVIBRATE
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_LONGTAP
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_TAPTAPVIBRATE
+
+                /* lt v ttt v, lt v ttt v, lt v ttt v, lt v ttt v */
+                for _ in  1...4 {
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+                    timeInterval += TIME_INC_REGULAR
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
                     timeInterval += TIME_INC_REGULAR
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
                     timeInterval += TIME_INC_REGULAR
                 }
 
-                // 6th 4 bars
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                timeInterval += TIME_INC_REGULAR
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-
-                // 7th 4 bars
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_LONGTAP
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_TAPTAPVIBRATE
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_LONGTAP
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_TAPTAPVIBRATE
 
                 // 8th 4 bars
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_LONGTAP
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_LONGTAP
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
-                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
-                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_LONGTAP
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_LONGTAP
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+//                hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+//                timeInterval += TIME_INC_REGULAR
+                for _ in 1...16 {
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
+                    timeInterval += 0.2
+                }
 
             case 8:
                 let howMany = (Int)(trackLengths[trackNum as! Int] / TIME_INC_REGULAR)

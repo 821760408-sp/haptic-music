@@ -39,7 +39,8 @@
             <objects>
                 <controller identifier="TimerInterfaceController" id="GXg-Et-wv6" customClass="TimerInterfaceController" customModule="HapticMusicProto_WatchKit_Extension">
                     <items>
-                        <timer alignment="center" verticalAlignment="center" id="IqO-O2-rqZ">
+                        <imageView alignment="center" id="UEl-ER-cF6"/>
+                        <timer alignment="center" verticalAlignment="bottom" id="IqO-O2-rqZ">
                             <fontDescription key="font" type="boldSystem" pointSize="28"/>
                             <calendarUnit key="units" minute="YES" second="YES"/>
                         </timer>
