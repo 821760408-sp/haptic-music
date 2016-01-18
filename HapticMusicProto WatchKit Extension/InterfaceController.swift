@@ -19,7 +19,14 @@ class InterfaceController: WKInterfaceController {
     // let images = ["img1", "img2", "img3", "img4"]
 
     let names = [
-        "track1: Moon water",
+        "notification",
+        "direction",
+        "success",
+        "retry",
+        "start",
+        "stop",
+        "click",
+        "track 1",
         "track 2",
         "track 3",
         "track 4",
@@ -30,8 +37,6 @@ class InterfaceController: WKInterfaceController {
         "track 9"
     ]
     
-    // let trackLength = [60, 60, 120, 120]
-
     override init() {
         super.init()
         loadTable()
