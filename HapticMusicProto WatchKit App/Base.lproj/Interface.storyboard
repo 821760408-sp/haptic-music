@@ -15,12 +15,10 @@
                                 <tableRow identifier="AudioTrackRowController" id="LqT-FQ-oe7" customClass="AudioTrackRowController" customModule="HapticMusicProto_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="Ody-8J-L6q">
                                         <items>
-                                            <imageView width="32" height="32" alignment="left" verticalAlignment="center" isAccessibilityElement="YES" contentMode="scaleAspectFit" id="ss4-uu-pLq"/>
-                                            <label width="87.5" height="38.5" alignment="left" verticalAlignment="center" text="Label" id="HD0-0J-T2K"/>
+                                            <label width="1" height="1" alignment="center" verticalAlignment="center" text="Label" textAlignment="left" id="HD0-0J-T2K"/>
                                         </items>
                                     </group>
                                     <connections>
-                                        <outlet property="trackImage" destination="ss4-uu-pLq" id="XHe-5z-HNg"/>
                                         <outlet property="trackName" destination="HD0-0J-T2K" id="c0F-Qx-JN6"/>
                                     </connections>
                                 </tableRow>
@@ -39,14 +37,15 @@
             <objects>
                 <controller identifier="TimerInterfaceController" id="GXg-Et-wv6" customClass="TimerInterfaceController" customModule="HapticMusicProto_WatchKit_Extension">
                     <items>
-                        <imageView alignment="center" id="UEl-ER-cF6"/>
+                        <imageView width="0.90000000000000002" alignment="center" contentMode="scaleAspectFit" id="UEl-ER-cF6"/>
                         <timer alignment="center" verticalAlignment="bottom" id="IqO-O2-rqZ">
-                            <fontDescription key="font" type="boldSystem" pointSize="28"/>
+                            <fontDescription key="font" type="system" pointSize="18"/>
                             <calendarUnit key="units" minute="YES" second="YES"/>
                         </timer>
                     </items>
                     <connections>
                         <outlet property="pbInterfaceTimer" destination="IqO-O2-rqZ" id="D9D-Ks-dTl"/>
+                        <outlet property="trackImage" destination="UEl-ER-cF6" id="IwR-mw-aE8"/>
                     </connections>
                 </controller>
             </objects>

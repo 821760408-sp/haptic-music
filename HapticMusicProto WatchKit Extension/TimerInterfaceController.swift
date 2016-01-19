@@ -14,8 +14,10 @@ class TimerInterfaceController: WKInterfaceController {
 
     @IBOutlet var pbInterfaceTimer: WKInterfaceTimer!
     
-    let device = WKInterfaceDevice.currentDevice()
+    @IBOutlet var trackImage: WKInterfaceImage!
     
+    let device = WKInterfaceDevice.currentDevice()
+    let images = ["DONG", "QI", "YONG", "ZHEN", "HOU", "JUE"]
     let trackLengths: [Double] = [10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 60.0, 60.0, 60.0, 60.0, 60.0, 60.0, 60.0]
 
     var hapticTimers = [NSTimer]()
@@ -25,8 +27,9 @@ class TimerInterfaceController: WKInterfaceController {
 
         if let trackNum: AnyObject = context {
 
-            let date = NSDate(timeIntervalSinceNow: trackLengths[trackNum as! Int] )
+//            trackImage.setImage(UIImage(named: images[trackNum as! Int]))
 
+            let date = NSDate(timeIntervalSinceNow: trackLengths[trackNum as! Int] )
             pbInterfaceTimer.setDate(date)
             pbInterfaceTimer.start()
 
@@ -40,16 +43,22 @@ class TimerInterfaceController: WKInterfaceController {
 
             case 0:
                 hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapVibrate", userInfo: nil, repeats: true))
+                trackImage.setImage(UIImage(named: images[trackNum as! Int]))
             case 1:
                 hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTap", userInfo: nil, repeats: true))
+                trackImage.setImage(UIImage(named: images[trackNum as! Int]))
             case 2:
                 hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: true))
+                trackImage.setImage(UIImage(named: images[trackNum as! Int]))
             case 3:
                 hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: true))
+                trackImage.setImage(UIImage(named: images[trackNum as! Int]))
             case 4:
                 hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap", userInfo: nil, repeats: true))
+                trackImage.setImage(UIImage(named: images[trackNum as! Int]))
             case 5:
                 hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: true))
+                trackImage.setImage(UIImage(named: images[trackNum as! Int]))
             case 6:
                 hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticClick", userInfo: nil, repeats: true))
 
@@ -378,10 +387,21 @@ class TimerInterfaceController: WKInterfaceController {
                 }
 
             case 8:
-                let howMany = (Int)(trackLengths[trackNum as! Int] / TIME_INC_REGULAR)
+//                let howMany = (Int)(trackLengths[trackNum as! Int] / TIME_INC_REGULAR)
+                let howMany = 8
                 for _ in 1...howMany {
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+                    timeInterval += 0.4
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+                    timeInterval += 3.5
+                }
+                for _ in 1...howMany {
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticTapTapTap", userInfo: nil, repeats: false))
+                    timeInterval += 0.4
+                    hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticLongTap2", userInfo: nil, repeats: false))
+                    timeInterval += 1.5
                     hapticTimers.append(NSTimer.scheduledTimerWithTimeInterval(timeInterval, target: self, selector: "playHapticVibrate", userInfo: nil, repeats: false))
-                    timeInterval += TIME_INC_REGULAR
+                    timeInterval += 2.0
                 }
 
             default: break

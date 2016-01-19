@@ -10,6 +10,6 @@ import WatchKit
 
 class AudioTrackRowController: NSObject {
 
-    @IBOutlet var trackImage: WKInterfaceImage!
+//    @IBOutlet var trackImage: WKInterfaceImage!
     @IBOutlet var trackName: WKInterfaceLabel!
 }
